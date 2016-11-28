@@ -7,7 +7,7 @@
 	<div class="col s12 m12 l12">
 		<div class="row">
 
-			<div class="input-field col s5 l4 m4">
+			<div class="input-field col s7 l4 m4">
 				
 				<select name="programas" id="programasProfesores">
 					<option value="" disabled selected>Seleccione un programa</option>
@@ -35,9 +35,13 @@
 		</div>
 	
 		<div class="row">		
-			<div class="input-field col s6 l3 m3">
-				<input id="nombreBusqueda" onkeypress="return buscar();" type="text" placeholder="Nombre del profesor" class="validate">	
-        	</div>    
+			<div class="col s8 l3 m3 ">
+                    <div class="input-field">
+                       <i class="material-icons prefix">search</i>
+                        <input id="nombreBusqueda" type="search"  onkeyup="buscar()" required placeholder="Buscar">
+                        
+                    </div>
+                </div>   
 		</div>
 <div class="divider  grey darken-1"></div>
 		<div class="row" id="tabla"> 
@@ -80,7 +84,9 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function(){  
+    $(document).ready(function(){ 
+        $("#programasProfesores").material_select();
+         $("#periodosProfesores").material_select();  
 
         ruta="{{route('admin.profesores.index')}}";
 

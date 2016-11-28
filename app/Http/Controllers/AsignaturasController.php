@@ -43,22 +43,17 @@ class AsignaturasController extends Controller
         return view('admin.asignaturas.index')->with('programas',$programas)->with('periodos',$periodos)->with('asignaturas',$asignaturas);
                    
     }
-
-
-    public function filterAjax(Request $request){
-
-    }
-    
+   
 
     public function verDatosAsignatura(Request $request, $id){ 
 
         $asignatura = Horario::find($id);
         $cantidadEstudiantes= $asignatura->matriculas;
 
-        $cantidad= count($cantidadEstudiantes);
-        $aux[]=["nombre"=>$asignatura->usuario->Nombre,"programa"=>$asignatura->programaAcademicoAsignatura->programaAcademico->NombrePrograma,"apellidos"=>$asignatura->usuario->Apellidos,"cantidadEstudiantes"=> $cantidad];
+        $cantidad = count($cantidadEstudiantes);
+        $aux[]=["nombre"=>$asignatura->usuario->Nombre,"programa"=>$asignatura->programaAcademicoAsignatura->programaAcademico->NombrePrograma,"apellidos"=>$asignatura->usuario->Apellidos,"cantidadEstudiantes"=> $cantidad,"asignatura"=>$asignatura->programaAcademicoAsignatura->asignatura->Nombre];
 
-         if ($request->ajax()) {
+        if ($request->ajax()) {
             return response()->json($aux);
         } 
     }

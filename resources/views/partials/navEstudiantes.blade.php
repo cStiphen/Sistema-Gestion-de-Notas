@@ -8,7 +8,7 @@
 </ul>
 
 <div class="navbar-fixed" >
-  <nav class=" gradient  s12 m3 l12 ">
+  <nav class=" gradient  s12 m3 l12 " style="height: 8%;"">
 
     <div class="nav-wrapper">
 
@@ -26,15 +26,15 @@
 </div>
  
 
-<ul id="slide-out" class="side-nav fixed gradient-side" style="width: 217px;">
+<ul id="slide-out" class="side-nav fixed gradient-side"  style="width: 216px; height: 97%; margin-top: 4%;">
 
     <li>
         <div class="userView">
-            <div class="background center" style="margin-top: 4%;">
-                <span class="white-text text-lighten-2 center"><i class="material-icons medium ">person</i></span>
+            <div class="background">
+                 <img src="{{ asset('img/fondo2.jpg')}}">
             </div>
             <div><p class="white-text text-lighten-2" >
-         
+                <span class="white-text text-lighten-2 center"><i class="material-icons medium ">person</i></span>
                 {{Auth::user()->primerNombre}} {{Auth::user()->primerApellido}}
             
             </p></div>

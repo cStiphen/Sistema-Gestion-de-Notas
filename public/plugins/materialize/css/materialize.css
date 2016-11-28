@@ -5925,7 +5925,9 @@ textarea.materialize-textarea + label:after {
   font-size: 0.8rem;
   -webkit-transform: translateY(-140%);
           transform: translateY(-140%);
+  
 }
+
 
 .input-field .prefix {
   position: absolute;
@@ -5972,13 +5974,14 @@ textarea.materialize-textarea + label:after {
   line-height: inherit;
   padding-left: 4rem;
   width: calc(100% - 4rem);
+  
 }
 
 .input-field input[type=search]:focus {
   background-color: #fff;
   border: 0;
   box-shadow: none;
-  color: #444;
+  color: #d50000;
 }
 
 .input-field input[type=search]:focus + label i,
